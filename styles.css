@@ -1,0 +1,600 @@
+/* Reset ve Temel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8fffe 0%, #f0f8f7 100%);
+    min-height: 100vh;
+}
+
+/* Header Stiller */
+.header {
+    text-align: center;
+    padding: 1.5rem 1rem 2rem 1rem;
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 50%, #58d68d 100%);
+    color: white;
+    position: relative;
+    overflow: visible;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaf" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M10,2 Q15,8 10,15 Q5,8 10,2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaf)"/></svg>') repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.logo-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.restaurant-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.restaurant-subtitle {
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.95;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sticky Navigation */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(46, 204, 113, 0.2);
+    z-index: 1000;
+    padding: 0.6rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.4rem;
+    padding: 0 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.3rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(39, 174, 96, 0.1);
+    border: 1px solid rgba(39, 174, 96, 0.2);
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+}
+
+.nav-item:hover {
+    background: #27ae60;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.nav-item.active {
+    background: #27ae60;
+    color: white;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* Ana İçerik */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.menu-section {
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #27ae60;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.section-line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #27ae60, #2ecc71, #58d68d);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Menü Öğeleri */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+    border-radius: 10px;
+    background: rgba(248, 255, 254, 0.5);
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-height: 50px;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #27ae60, #2ecc71);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: rgba(46, 204, 113, 0.05);
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(39, 174, 96, 0.15);
+}
+
+.menu-item:hover::before {
+    transform: scaleY(1);
+}
+
+.item-info {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 0;
+}
+
+.item-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #27ae60;
+    white-space: nowrap;
+    padding: 0.2rem 0.6rem;
+    background: rgba(39, 174, 96, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+/* Rakı Kategorileri */
+.raki-category {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #3498db;
+}
+
+.raki-category:last-child {
+    margin-bottom: 0;
+}
+
+.raki-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #3498db;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(52, 152, 219, 0.2);
+}
+
+.raki-category .menu-items {
+    gap: 0.75rem;
+}
+
+.raki-category .menu-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.raki-category .menu-item::before {
+    background: linear-gradient(180deg, #3498db, #5dade2);
+}
+
+.raki-category .item-name {
+    font-size: 1rem;
+}
+
+.raki-category .item-price {
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    max-width: 300px;
+    margin: 0 auto 1rem auto;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 45px;
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.social-link:hover {
+    background: rgba(46, 204, 113, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Desktop Tasarım */
+@media (min-width: 769px) {
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .restaurant-name {
+        font-size: 2.2rem;
+    }
+    
+    .restaurant-subtitle {
+        font-size: 1rem;
+    }
+    
+    .header {
+        padding: 2rem 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    /* Desktop'ta tek sıra */
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 2rem;
+        max-width: 1000px;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+        min-height: 40px;
+        min-width: 120px;
+    }
+}
+
+/* Tablet ve Mobil Tasarım */
+@media (max-width: 768px) {
+    .restaurant-name {
+        font-size: 2rem;
+    }
+    
+    .restaurant-subtitle {
+        font-size: 1rem;
+    }
+    
+    .nav-container {
+        max-width: 350px;
+        gap: 0.3rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-item {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.2rem;
+        min-height: 35px;
+    }
+    
+    .nav-container {
+        gap: 0.25rem;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .menu-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .menu-item {
+        padding: 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 45px;
+    }
+    
+    .item-info {
+        margin-right: 0.5rem;
+        flex: 1;
+    }
+    
+    .item-price {
+        font-size: 0.9rem;
+        padding: 0.15rem 0.5rem;
+    }
+    
+    .raki-category {
+        padding: 1rem;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+        max-width: 250px;
+        gap: 0.6rem;
+    }
+    
+    .social-link {
+        min-height: 40px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .restaurant-name {
+        font-size: 1.6rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.8rem;
+        max-width: 320px;
+        gap: 0.25rem;
+    }
+    
+    .nav-item {
+        font-size: 0.6rem;
+        padding: 0.35rem 0.15rem;
+        min-height: 32px;
+        border-radius: 10px;
+    }
+    
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .menu-section {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+    
+    .menu-item {
+        padding: 0.4rem;
+        border-radius: 8px;
+        min-height: 40px;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .item-name {
+        font-size: 0.85rem;
+        margin-bottom: 0.05rem;
+    }
+    
+    .item-price {
+        font-size: 0.8rem;
+        padding: 0.1rem 0.4rem;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll Animasyonu */
+@media (prefers-reduced-motion: no-preference) {
+    .menu-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .menu-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Erişilebilirlik */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Stilleri */
+.nav-item:focus,
+.social-link:focus {
+    outline: 2px solid #27ae60;
+    outline-offset: 2px;
+}
+
+/* Print Stilleri */
+@media print {
+    .sticky-nav,
+    .footer {
+        display: none;
+    }
+    
+    .header {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .menu-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+}
