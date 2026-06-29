@@ -306,25 +306,6 @@ const additionalStyles = `
         background: rgba(46, 204, 113, 0.1) !important;
         transform: translateX(5px) scale(1.02) !important;
     }
-    
-    .nav-container.mobile {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .nav-container.mobile .nav-item {
-        width: 200px;
-        text-align: center;
-        margin: 0.2rem 0;
-    }
-    
-    @media (max-width: 480px) {
-        .nav-container.mobile .nav-item {
-            width: 150px;
-            font-size: 0.7rem;
-            padding: 0.3rem 0.5rem;
-        }
-    }
 `;
 
 // Dinamik stil ekle
